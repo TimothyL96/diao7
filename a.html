@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <style type="text/css">
+        .ad{
+            display: none
+        }
+    </style>
+
+
+    </head>
+<body>
+<button onclick="abc()">me</button>
+<button onclick="ab()">meeee</button>
+<button onclick="a()">edit</button>
+<div id="accepton-form"></div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+    var aotoken;
+    aotoken = "txn_4e3570f4a3392d29ece90b544929dac7";
+    function abc(){
+
+        $('.accepton-button-submit').remove();
+        $('#me').remove();
+        var script= document.createElement('script');
+        script.setAttribute("id", "me");
+        script.setAttribute("data-public-key", "pkey_c08030782817623c");
+        script.setAttribute("class", "accepton-button");
+        script.setAttribute("data-additional-fields", "name,phone,billing_address,shipping_address");
+        script.setAttribute("data-customer-email", "");
+        script.setAttribute("data-token", "txn_ac915d83b0d36a7268fd8b67ddd974ab");
+        script.setAttribute("src", "https://js.accepton.com/scripts/accepton.js?t=1.1");
+        script.setAttribute("data-success-callback", "myFunction");
+       // script.setAttribute("data-redirect-uri", "https://google.com");
+       // <script data-success-callback="myFunction">
+
+        document.getElementById('accepton-form').appendChild(script);
+    }
+    
+    window.myFunction = function (response) {
+        var charge = response.charge;
+
+        console.log(charge);
+
+        return false;
+    };
+  
+   
+    function ab()
+    {
+
+  //      document.getElementsByClassName("accepton-button-submit")[0].setAttribute("id", "123");
+    //    document.getElementById("123").setAttribute("class", "ad");
+       // document.getElementById("acceptonform").removeAttribute("src");
+
+      /*  document.getElementById("acceptonform").removeAttribute("data-public-key");
+        document.getElementById("acceptonform").removeAttribute("class");
+        document.getElementById("acceptonform").removeAttribute("data-additional-fields");
+        document.getElementById("acceptonform").removeAttribute("data-customer-email");
+        document.getElementById("acceptonform").removeAttribute("data-token");
+        document.getElementById("acceptonform").removeAttribute("src");
+        document.getElementById("acceptonform").removeAttribute("data-accepton-active");*/
+        $('#me').remove();
+        $('.accepton-button-submit').remove();
+        //document.getElementById("acceptonform").setAttribute("data-public-key", "pkey_c08030782817623c");
+       // document.getElementById("acceptonform").setAttribute("class", "accepton-button");
+       // document.getElementById("acceptonform").setAttribute("data-additional-fields", "name,phone,billing_address,shipping_address");
+       // document.getElementById("acceptonform").setAttribute("data-customer-email", "");
+      //  document.getElementById("acceptonform").setAttribute("data-token", "txn_4e3570f4a3392d29ece90b544929dac7");
+      //  document.getElementById("acceptonform").setAttribute("src", "https://js.accepton.com/scripts/accepton.js?t=1.1");
+    }
+    function a()
+    {
+        aotoken = "1";
+        
+    }
+    </script>
+
+
+</body>
+</html>
+   <!--     <div id="accepton-form"></div>
+    <script src="https://js.accepton.com/scripts/accepton.js"
+      class="accepton-button"
+      data-public-key="pkey_c08030782817623c"
+      data-redirect-uri=""
+      data-token="txn_4e3570f4a3392d29ece90b544929dac7"
+
+      data-additional-fields="name,phone,billing_address,shipping_address"
+      data-customer-email=""
+      data-target="accepton-form"></script>-->
